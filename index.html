@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Puppy Bowl</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Puppy Bowl</h1>
+    </header>
+
+    <main>
+      <section id="new-player-form">
+        <h2>Add a New Player</h2>
+        <form id="add-player">
+          <label for="player-name">Name:</label>
+          <input type="text" id="player-name" name="player-name" required />
+
+          <label for="player-breed">Breed:</label>
+          <input type="text" id="player-breed" name="player-breed" required />
+
+          <label for="player-stats">Stats:</label>
+          <textarea id="player-stats" name="player-stats" required></textarea>
+
+          <button type="submit">Add Player</button>
+        </form>
+      </section>
+
+      <section id="all-players-container">
+        <h2>All Players</h2>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2023 Puppy Bowl Event</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  header {
+    background-color: #00fae5;
+    color: black;
+    padding: 1em;
+    text-align: center;
+  }
+  
+  main {
+    padding: 1em;
+  }
+  
+  #new-player-form {
+    margin-bottom: 2em;
+  }
+  
+  #add-player label {
+    display: block;
+    margin-top: 0.5em;
+  }
+  
+  #add-player input,
+  #add-player textarea {
+    width: 100%;
+    margin-top: 0.2em;
+  }
+  
+  #add-player button {
+    margin-top: 1em;
+    padding: 0.5em;
+    background-color: #00fae5;
+    color: black;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #all-players-container {
+    border-top: 1px solid #ddd;
+    padding-top: 1em;
+  }
+  
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  #all-players-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+    justify-content: flex-start;
+  }
+  
+  .player-card {
+    flex: 0 1 200px; 
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+  }
+  
