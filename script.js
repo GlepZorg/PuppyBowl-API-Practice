@@ -42,6 +42,10 @@ const fetchSinglePlayer = async (playerId) => {
 };
 
 const addNewPlayer = async (playerObj) => {
+  if (playerObj.teamId) {
+    playerObj.teamId = Number(playerObj.teamId);
+  }
+
   try {
     const response = await fetch(`${APIURL}/players`, {
       method: 'POST',
@@ -54,10 +58,28 @@ const addNewPlayer = async (playerObj) => {
       throw new Error('Network response was not ok');
     }
     const newPlayer = await response.json();
+    return newPlayer; 
   } catch (err) {
     console.error('Oops, something went wrong with adding that player!', err);
   }
 };
+
+document.getElementById('add-player').addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const playerObj = {
+    name: document.getElementById('player-name').value,
+    breed: document.getElementById('player-breed').value,
+    stats: document.getElementById('player-stats').value,
+    teamId: document.getElementById('team-id').value ? Number(document.getElementById('team-id').value) : null
+  };
+  await addNewPlayer(playerObj);
+  const players = await fetchAllPlayers();
+  if (players) {
+    renderAllPlayers(players);
+  }
+});
+
+
 
 const removePlayer = async (playerId) => {
   try {
@@ -171,6 +193,8 @@ function attachDeleteEventListeners() {
         <input type="text" id="player-breed" name="player-breed" required />
         <label for="player-stats">Stats:</label>
         <textarea id="player-stats" name="player-stats" required></textarea>
+        <label for="team-id">Team ID:</label>
+        <input type="text" id="team-id" name="team-id" required />
         <button type="submit">Add Player</button>
       </form>
     `;
