@@ -132,7 +132,7 @@ async function showPlayerStats(playerId) {
     const playerDetails = `
       Breed: ${player.breed}
       Status: ${player.status}
-      Team ID: ${player.teamId}
+      Team ID: ${player.Id}
     `;
 
     alert(playerDetails); 
